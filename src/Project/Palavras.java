@@ -23,7 +23,7 @@ public class Palavras {
 		}
 		@Override
 		public String toString() {
-			return "Palavras [palavra=" + palavra + "]";
+			return this.getPalavra();
 		}
 		
 		
