@@ -11,7 +11,7 @@ public class receber_dados {
 	
 	
 	public void pegar_dados_arq() {	
-		String path = "C:\\Users\\jvcco\\Desktop\\Ex4_Parabens.txt"; //Caminho do arquivo.
+		String path = "C:\\Users\\htols\\Desktop\\Ex4_Parabens.txt"; //Caminho do arquivo.
 		try (BufferedReader br = new BufferedReader(new FileReader(path))) { //Dessa maneira, já instancia os recursos no bloco try.
 			//Primeira linha															//Quando terminar o bloco try ou cair no catch já haverá a desalocação dos recursos.
 			String line = br.readLine(); //Ler de linha a linha. ReadLine() le a string até a quebra de linha								
