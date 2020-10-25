@@ -3,20 +3,24 @@ package Project;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.sun.tools.javac.code.Attribute.Array;
 
 public class receber_dados {
 	
 	private List<Palavras> listPalavras = new ArrayList<Palavras>(); //Instanciando o ArrayList com a class Palavras
-	
+	private String aux = "ááÀ.";//CORSI -----> retirar serve so pra ver q ta rodando
+
 	
 	public String reader_path(String caminho) {
 		String path = caminho;
 		return path;
 	}
 	public void pegar_dados_arq() {	
-		try (BufferedReader br = new BufferedReader(new FileReader(reader_path("C:\\Users\\jvcco\\Desktop\\Ex4_Parabens.txt")))) { //Dessa maneira, já instancia os recursos no bloco try.
+		try (BufferedReader br = new BufferedReader(new FileReader(reader_path("C:\\Users\\htols\\Desktop\\Ex4_Parabens.txt")))) { //Dessa maneira, já instancia os recursos no bloco try.
 			//Primeira linha															//Quando terminar o bloco try ou cair no catch já haverá a desalocação dos recursos.
 			String line = br.readLine(); //Ler de linha a linha. ReadLine() le a string até a quebra de linha								
 			while (line != null) { //Ler até o final do arquivo.		
@@ -36,7 +40,20 @@ public class receber_dados {
 			System.out.println("Error: " + e.getMessage());
 		}
 	}
+	public static String removeAcents(String str) { //CORSI -----> POE A LISTA P RECEBER
+	    return Normalizer.normalize(str, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
+	}
 	
+	public void formatar_words() {
+		/*
+		for (int i = 0; i <getListPalavras().size(); i++) {
+			ArrayList<String> auxx = new ArrayList();
+			auxx = getListPalavras().get(i);
+		}*/
+		System.out.println("-----------\nRECEBER_DADOS\n-----------");
+		String recebe = aux.toLowerCase();//mínusculas CORSI -----> POE A LISTA P RECEBER 
+		System.out.println(aux);//TESTE P/ VERIFICAR SE DEIXA MINUSCULO	---> RETIRAR DPS
+	}
 	
 	public List<Palavras> getListPalavras() {
 		return listPalavras;
@@ -51,6 +68,7 @@ public class receber_dados {
 		for (int i = 0; i <getListPalavras().size(); i++) {
 			System.out.println(getListPalavras().get(i));	
 		}
+	
 			
 	}
 }

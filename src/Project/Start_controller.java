@@ -5,6 +5,7 @@ public class Start_controller {
 	receber_dados dados = new receber_dados();
 	dados.pegar_dados_arq();
 	dados.exibir_elementos();
+	dados.formatar_words();
 
 	}
 		
