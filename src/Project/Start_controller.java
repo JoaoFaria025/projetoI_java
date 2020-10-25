@@ -7,7 +7,8 @@ public class Start_controller {
 	dados.exibir_elementos();
 	validate_words words = new validate_words();
 	words.formatar_words();
-
+	String aux = words.removeAcents("√¡¡");//FUNCIONANDO RETIRAR ACENTOS
+	System.out.println(aux);
 	}
 		
 }
